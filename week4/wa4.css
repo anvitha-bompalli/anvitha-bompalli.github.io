@@ -1,8 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "ink-free", sans-serif;
+    color: #4A2513;
+    background-color: #E8D6D6;
+}
+
+header{ 
+    background-color:#2E324D ;
+    color: #E8D6D6;
+    text-align: center;
+    padding: 32px 16px;
+
+}
+main{
+    padding: 20px;
+}
 p{
     color: #4A2513;
 }
 
 .myname {
-    color: red;
-    font-family: "";
+    color: #E8D6D6;
+    font-family: "ink-free", sans-serif;
+}
+
+ a {
+    text-decoration: underline;
+    color: #E8D6D6
+}
+a:hover {
+    Text-decoration: underline;
+    color: #BFCBD9
+}
+
+
+p a {
+    color: #4A2513;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #2E324D; 
+}
+h4 a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4A2513;
+    color: #E8D6D6;   
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px #D9B3B0;
+    transition: all 0.2s ease-in-out;
+}
+
+h4 a:hover {
+    background-color:#BFCBD9 ; 
+    color:#4A2513;
+    box-shadow: 3px 3px 0px #89929c; 
+    transform: translateY(-2px); 
 }
