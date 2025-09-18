@@ -1,0 +1,42 @@
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: lightblue;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.nav-menu li {
+    list-style: none;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+    flex: 1;
+}
+
+.nav-menu li a:hover {
+    color:red;
+    transition-duration: 0.2s;
+}
+
+.nav-menu li a {
+    color:red;
+    transition-duration: 0.2s;
+}
+.nav-brand {
+    flex-grow:1;
+}
+@media (max-width: 768px) {
+
+}
