@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="main-nav">
-        <div class="nav-brand">Community Hub</div>
+        <div class="nav-brand">Music Club</div>
         <button class="nav-toggle" aria-label="Toggle navigation menu">
             <span></span>
             <span></span>
@@ -22,21 +22,23 @@
         </ul>
 </nav>
 <script>
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
 
-  function showMenu() {
-    const shown = navMenu.classList.toggle("show");
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
 
-    if (shown) {
-      navToggle.style.transform = "rotate(90deg)";
-      navToggle.style.transition = "transform 0.3s ease";
-    } else {
-      navToggle.style.transform = "rotate(0deg)";
-    }
+function showMenu() {
+  const shown = navMenu.classList.toggle("show");
+
+  if (shown) {
+    navToggle.style.transform = "rotate(90deg)";
+    navToggle.style.transition = "transform 0.3s ease";
+  } else {
+    navToggle.style.transform = "rotate(0deg)";
   }
+}
 
-  navToggle.addEventListener('click', showMenu);
+navToggle.addEventListener('click', showMenu);
+
 </script>
 </body>
 </html>
