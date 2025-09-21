@@ -21,5 +21,22 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 </nav>
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+
+  function showMenu() {
+    const shown = navMenu.classList.toggle("show");
+
+    if (shown) {
+      navToggle.style.transform = "rotate(90deg)";
+      navToggle.style.transition = "transform 0.3s ease";
+    } else {
+      navToggle.style.transform = "rotate(0deg)";
+    }
+  }
+
+  navToggle.addEventListener('click', showMenu);
+</script>
 </body>
 </html>
