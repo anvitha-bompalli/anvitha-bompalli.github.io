@@ -36,16 +36,14 @@ function changeBgCol(event){
 
 addEventListener("keydown", (event) => {changeBgCol(event)});
 
-// playlist page script buttons
+//playlist page
   const filterButtons = document.querySelectorAll('.playlist-nav .filter-btn');
   const playlistItems = document.querySelectorAll('.playlist-item');
 
   filterButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-      // Remove active class from all buttons
       filterButtons.forEach(btn => btn.classList.remove('active'));
 
-      // Add active class to clicked button
       event.target.classList.add('active');
 
       const filterValue = event.target.textContent.toLowerCase();

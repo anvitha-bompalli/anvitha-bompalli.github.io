@@ -146,7 +146,6 @@ body {
     gap: 20px;
 }
 
-/* Class used by JavaScript to hide filtered items */
 .playlist-item[style*="none"] {
     display: none;
 }
