@@ -1,6 +1,11 @@
+body {
+    background-color: #f7f6f5;
+    font-family: 'Courier New', Courier, monospace;
+}
 .main-nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #260101;
     border: 2px solid black;
     padding: 20px;
@@ -9,6 +14,7 @@
 .nav-brand {
     flex-grow:1;
     color: #F2D3D0;
+    align-items: center;
 }
 
 .nav-toggle {
@@ -40,6 +46,7 @@
     transition-duration: 0.2s;
 }
 
+/*
 .event-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -75,6 +82,123 @@
 .event3 {
     grid-area: event3;
     
+}*/
+
+/* this is new stuff*/
+.home-grid {
+  display: grid;
+  grid-template-areas: "about favorite";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 52px;
+  padding: 20px;
+}
+.box {
+    background-color:#F2D3D0 ;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    border-radius: 20px;
+    color:#260101;
+
+}
+
+.album-covers {
+    width: 400px;
+    height: 400px;
+}
+/*.about { grid-area: about; 
+    background: #F2D3D0;
+    padding: 20px; 
+    border-radius: 10px; }
+.favorites { grid-area: favorite; 
+    background: #F2D3D0;
+    padding: 20px; 
+    border-radius: 10px; }*/
+
+/* this is new stuff*/
+
+/* playlist page*/
+
+.playlist-grid-container {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "content";
+    gap: 20px;
+}
+
+.playlist-header {
+    grid-area: header;
+    text-align: left;
+}
+
+.playlist-nav {
+    grid-area: nav;
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.playlist-grid {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+/* Class used by JavaScript to hide filtered items */
+.playlist-item[style*="none"] {
+    display: none;
+}
+.filter-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #260101;
+    color: #F2D3D0;   
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* backstage styling*/
+.backstage-grid {
+  display: grid;
+  grid-template-areas:
+   "contact"
+   "recommend";
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.recommend form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recommend input, 
+.recommend button {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.recommend button {
+  background: #260101;
+  color: #F2D3D0;
+  cursor: pointer;
+  border: none;
+}
+
+.recommend button:hover {
+  background: #364fc7;
+}
+#feedback {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
 }
 
 @media (max-width: 768px) {
