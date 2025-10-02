@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "botc-style.css">
+    <title>Music Club</title>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand"><h1>Music Club</h1></div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="home.html">home</a></li>
+            <li><a href="playlist.html">playlist</a></li>
+            <li><a href="events.html">events</a></li>
+            <li><a href="backstage.html">backstage</a></li>
+        </ul>
+</nav>
+
+ <main class="backstage-grid">
+    <section class="contact box" aria-labelledby="contact-title">
+      <h2 id="contact-title">contact</h2>
+      <p>Email: <a href="anvitha.bompalli@colorado.edu">anvitha.bompalli@colorado.edu
+      </a></p>
+    </section>
+
+    <section class="recommend box" aria-labelledby="recommend-title">
+      <h2 id="recommend-title">recommend Music</h2>
+      <form id="recForm">
+        <label for="recommendInput">recommend any song or album:</label>
+        <input id="recommendInput" type="text" placeholder="Enter your suggestion" required>
+        <button type="submit">submit</button>
+      </form>
+      <p id="feedback" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+<script src="script.js"></script>
+</body>
+</html>
