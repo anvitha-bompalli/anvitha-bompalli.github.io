@@ -83,25 +83,31 @@ if (recForm) {
 }
 
 // button 
+// event listener for the theme button
 let btn = document.querySelector('#theme').addEventListener('click', theme)
 
 function theme(){
+  // the current theme from the local storage
   setTheme(localStorage.getItem('userTheme'));
 }
 
+// set the theme
 function setTheme(theme){
   let inTheme = theme;
+  // if the current theme is dark switch to light when clicked
   if (inTheme == 'dark') {
     theme = 'light';
   }
+
   else{
     theme = 'dark';
   }
+  // storing the theme in localstorage
   localStorage.setItem('userTheme', theme);
   document.body.className = theme;
 }
 
-// load saved theme on page load 
+// load saved theme on page load, if no saved theme found on the local storage, use light as default
 window.addEventListener('load', function(){
   const savedTheme = localStorage.getItem('userTheme') || 'light';
   document.body.className = savedTheme;
