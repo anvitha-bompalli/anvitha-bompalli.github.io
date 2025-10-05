@@ -1,7 +1,11 @@
-body {
-    background-color: #f7f6f5;
+html {
     font-family: 'Courier New', Courier, monospace;
 }
+body {
+    background-color: #f7f6f5;
+    /*font-family: 'Courier New', Courier, monospace;*/
+}
+
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -9,7 +13,7 @@ body {
     background-color: #260101;
     border: 2px solid black;
     padding: 20px;
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Courier New', Courier, monospace;*/
 }
 .nav-brand {
     flex-grow:1;
@@ -95,7 +99,7 @@ body {
 }
 .box {
     background-color:#F2D3D0 ;
-    font-family: 'Courier New', Courier, monospace;
+    /*font-family: 'Courier New', Courier, monospace;*/
     padding: 20px;
     border-radius: 20px;
     color:#260101;
@@ -215,6 +219,19 @@ body {
     align-items: center;
 
     padding: 32px;
+    /*font-family: 'Courier New', Courier, monospace;*/
+}
+
+.font-pref {
+    align-self: center;
+    justify-self: center;
+    width: 50%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 32px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -242,6 +259,10 @@ body {
 
 #large-text {
     font-size: 24px;
+}
+
+#read-easy {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media (max-width: 768px) {

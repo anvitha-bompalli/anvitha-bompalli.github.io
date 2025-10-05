@@ -11,6 +11,10 @@ const med_txt = document.querySelector('#med-text');
 const large_txt = document.querySelector('#large-text');
 const clear_txt_pref = document.querySelector('#clear-preferences');
 
+const default_font = document.querySelector('#default-font');
+const read_easy = document.querySelector('#read-easy');
+const clear_fnt_pref = document.querySelector('#clear-pref');
+
 function showMenu() {
   const shown = navMenu.classList.toggle("show");
 
@@ -99,7 +103,7 @@ function change_text_size(size) {
 function clear_loacl_storage(size) {
   let temp_size = size * 16;
   
-  localStorage.claer();
+  localStorage.clear();
   document.querySelector('html').style.fontSize = String(temp_size) + "px";
 }
 
@@ -109,7 +113,32 @@ function set_text_size() {
     document.querySelector("html").style.fontSize = String(temp_size) + "px";
   }
 }
+
+function change_font(font){
+  document.querySelector('html').style.fontFamily = font;
+  localStorage.setItem("fontFamily", font);
+  console.log("works")
+}
+
+function clear_font_storage() {
+  localStorage.clear();
+  document.querySelector('html').style.fontFamily = "Courier New";
+}
+
+function set_font_style() {
+  if (localStorage.getItem("fontFamily") !== null) {
+    let saved_font = localStorage.getItem("fontFamily");
+    document.querySelector('html').style.fontFamily = saved_font;
+  }
+}
+
+
+
 small_txt.addEventListener('click', () => {change_text_size(0.8)});
 med_txt.addEventListener('click', () => {change_text_size(1)});
 large_txt.addEventListener('click', () => {change_text_size(1.5)});
 clear_txt_pref.addEventListener('click', () => {clear_loacl_storage(1)});
+
+default_font.addEventListener('click', () => {change_font("Courier New")});
+read_easy.addEventListener('click', () => {change_font("Verdana")});
+clear_fnt_pref.addEventListener('click', () => {clear_font_storage()});
