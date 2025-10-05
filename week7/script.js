@@ -100,7 +100,7 @@ function change_text_size(size) {
 
 }
 
-function clear_loacl_storage(size) {
+function clear_local_storage(size) {
   let temp_size = size * 16;
   
   localStorage.clear();
@@ -137,8 +137,13 @@ function set_font_style() {
 small_txt.addEventListener('click', () => {change_text_size(0.8)});
 med_txt.addEventListener('click', () => {change_text_size(1)});
 large_txt.addEventListener('click', () => {change_text_size(1.5)});
-clear_txt_pref.addEventListener('click', () => {clear_loacl_storage(1)});
+clear_txt_pref.addEventListener('click', () => {clear_local_storage(1)});
 
 default_font.addEventListener('click', () => {change_font("Courier New")});
 read_easy.addEventListener('click', () => {change_font("Verdana")});
 clear_fnt_pref.addEventListener('click', () => {clear_font_storage()});
+
+window.addEventListener('DOMContentLoaded', () => {
+  set_text_size();
+  set_font_style();
+});
