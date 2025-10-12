@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Music Club, a community resource for sharing our favorite music.
+     Discover new music, listen together.">
+    <link rel="stylesheet" href = "botc-style.css">
+    <title>Music Club</title>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-brand"><h1>Music Club</h1></div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="home.html">home</a></li>
+            <li><a href="playlist.html">playlist</a></li>
+            <li><a href="events.html">events</a></li>
+            <li><a href="backstage.html">backstage</a></li>
+        </ul>
+</nav>
+
+<main class = "home-grid">
+  <section class = "about box">
+    <h2>about us!</h2>
+    <p>hi! we are a group of friends that absolutely love music. we love discovering new music, sharing it, and listening
+      to music together. this just started out as us sending each other music, and we decided to make it into a club where
+      everyone is welcome. we now have listening events where we listen to albums from various genres.</p>
+      <p>if you are interested in joining us, check out our page and <a href ="backstage.html">connect</a> with us!</p>
+      <p> or you could just leave a recommendation for us <a href ="backstage.html">here</a>! 
+    </p>
+  </section>
+
+  <section class = "favorites box">
+    <h2>our current favorite!</h2>
+    <img src="images/grace_j.webp" alt="Album cover for grace by jeff buckley" class = "album-covers", hight = "256", width = "256">
+    <p><strong>Album:</strong> Grace</p>
+    <p><strong>Artist:</strong> Jeff Buckley</p>
+    <p>check our some of our other favorites <a href ="playlist.html">here!</a></p>
+  </section>
+</main>
+
+<!--adding footer-->
+
+<footer class = "main-footer">
+  <div class = "text-sizes">
+    <h3>Text Size:</h3>
+    <button id="small-text">Small</button>
+    <button id="med-text">Medium</button>
+    <button id="large-text">Large</button>
+    <button id="clear-preferences">Clear Preferences</button>
+  </div>
+
+  <div class = "font-pref">
+    <h3>Font:</h3>
+    <button id="default-font">Default</button> 
+    <button id="read-easy">Read easy</button>
+    <button id="clear-pref">Clear Preferences</button>
+   </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
