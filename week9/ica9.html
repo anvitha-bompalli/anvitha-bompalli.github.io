@@ -39,6 +39,52 @@
     animation-delay: 1.8s;
   }
 
+  .another-box{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            height: 200px;
+            width: 200px;
+            border: 5px black solid;
+            background-color: papayawhip;
+            transition-property: width height;
+            transition-duration: 1s;
+
+
+  }
+
+  .another-box:hover{
+            width: 500px;
+            height: 500px;
+  }
+  
+    @keyframes moving-box {
+            from {
+                left: 0px;
+                top:0px;
+                background-color: aliceblue;
+            }
+            25%{
+                left: 500px;
+                top: 0px;
+            }
+            50%{
+                left: 500px;
+                top: 500px;
+                background-color: bisque;
+            }
+            75%{
+                left: 0px;
+                top: 500px;
+                background-color: palevioletred;
+            }
+
+            to {
+                left: 0px;
+                top:0px;
+                background-color: aliceblue;
+            }
+        }
   @keyframes move {
     from {
       top: 0;
@@ -93,6 +139,8 @@
 </style>
 </head>
 <body>
+
+<div class = "another-box"></div>
 
 <div class="loader">
   <div class="square"></div>
