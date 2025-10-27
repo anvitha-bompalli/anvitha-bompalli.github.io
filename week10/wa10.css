@@ -1,0 +1,122 @@
+/* General layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  background-color:#E27F5F;
+}
+
+/* App container */
+.app {
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
+  width: 600px;
+  background-color:#564162;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+  margin-bottom: 100px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  font-size: 28px;
+  padding: 15px;
+  background-color: #564162;
+  color: #F1ECDA;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Jokes section */
+.jokes {
+  padding: 30px 50px;
+  text-align: center;
+  min-height: 180px;
+  background-color:#F1ECDA;
+  color: #564162;
+  border-bottom: 2px solid #ccc;
+}
+
+.joke-setup, .joke-punchline {
+  font-size: 22px;
+  color: #564162;
+  margin-bottom: 10px;
+}
+
+/* Loader styling */
+.loader {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loader img {
+  width: 90px;
+  height: 90px;
+  animation: spin 2s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Buttons */
+.button {
+  display: block;
+  color: #564162;
+  border: none;
+  background-color: #F1ECDA;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px auto;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.button:hover {
+  background-color: #f0de9e;
+}
+
+/* Explanation section - visually distinct */
+.explanation {
+  width: 600px;
+  margin: 40px auto;
+  background-color:#564162;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 25px 30px;
+  border-radius: 10px;
+}
+
+.explanation h2 {
+  margin-top: 0;
+  color: #E27F5F;
+  text-align: center;
+}
+
+.explanation p {
+  font-size: 16px;
+  color: #F1ECDA;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .app, .explanation {
+    width: 90%;
+  }
+  .joke-setup, .joke-punchline {
+    font-size: 18px;
+  }
+}
+
+
