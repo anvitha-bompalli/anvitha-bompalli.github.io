@@ -1,32 +1,73 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #e8f4fd;
-  color: #333;
+html, body {
   margin: 0;
-  padding: 2em;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #B8C6D9;
 }
 
-h1 {
-  color: #0077b6;
-}
-
-.controls {
-  margin-bottom: 1em;
-}
-
-#weatherResult {
-  margin-top: 2em;
-  padding: 1em;
-  background: white;
-  display: inline-block;
+/* App container */
+.app {
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
+  width: 600px;
+  background-color: #141F40;
   border-radius: 10px;
-  box-shadow: 0 0 10px #ccc;
-  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  padding-bottom: 20px;
 }
 
-.error {
-  color: red;
-  margin-top: 1em;
+/* Header */
+header {
+  text-align: center;
+  font-size: 28px;
+  padding: 15px;
+  background-color: #141F40;
+  color: #B8C6D9;
+  border-radius: 10px 10px 0 0;
 }
 
+/* Weather display */
+.weather {
+  padding: 30px 50px;
+  text-align: center;
+  min-height: 150px;
+  background-color: #B8C6D9;
+  color: #141F40;
+  border-bottom: 2px solid #7A98BF;
+}
+
+.weather-info {
+  font-size: 20px;
+  color: #141F40;
+}
+
+/* Dropdown and buttons */
+.dropdown, .button {
+  display: block;
+  border: none;
+  background-color: #7A98BF;
+  color: #141F40;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px auto;
+  font-size: 18px;
+  transition: background 0.3s ease;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.button:hover, .dropdown:hover {
+  background-color: #B8C6D9;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: 90%;
+  }
+  .weather-info {
+    font-size: 18px;
+  }
+}

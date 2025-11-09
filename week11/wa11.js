@@ -1,76 +1,76 @@
-const API_KEY = "0137328857e384bec545718d4749db31";
-const weatherDiv = document.getElementById("weatherResult");
-const errorDiv = document.getElementById("error");
-const privacySelect = document.getElementById("privacy");
-const manualInput = document.getElementById("manualInput");
+const apiKey = "0137328857e384bec545718d4749db31";
+const weatherInfo = document.getElementById("weather-info");
+const fetchBtn = document.getElementById("fetch-weather");
+const privacyOption = document.getElementById("privacy-option");
 
-document.getElementById("getWeather").addEventListener("click", handlePrivacyChoice);
-document.getElementById("searchCity").addEventListener("click", () => {
-  const city = document.getElementById("cityName").value.trim();
-  if (city) fetchWeatherByCity(city);
-});
+fetchBtn.addEventListener("click", () => {
+  const choice = privacyOption.value;
 
-privacySelect.addEventListener("change", () => {
-  manualInput.style.display = privacySelect.value === "manual" ? "block" : "none";
-});
+  if (!choice) {
+    weatherInfo.textContent = "Please select a location option first.";
+    return;
+  }
 
-function handlePrivacyChoice() {
-  const choice = privacySelect.value;
-  errorDiv.textContent = "";
-  weatherDiv.innerHTML = "Loading...";
-
-  if (choice === "precise") {
-    if (!navigator.geolocation) {
-      showError("Your browser doesn't support location access.");
-      return;
+  if (choice === "manual") {
+    const city = prompt("Enter the city name:");
+    if (city) {
+      fetchWeatherByCity(city.trim());
+    } else {
+      weatherInfo.textContent = "City name not provided.";
     }
-    navigator.geolocation.getCurrentPosition(
-      pos => fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude),
-      err => showError("Location access denied or unavailable.")
-    );
+  } else if (choice === "precise") {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(successPrecise, geoError);
+    } else {
+      weatherInfo.textContent = "Geolocation not supported by your browser.";
+    }
   } else if (choice === "city") {
-    const city = prompt("Enter your city name:");
-    if (city) fetchWeatherByCity(city);
-    else weatherDiv.innerHTML = "";
-  } else if (choice === "manual") {
-    manualInput.style.display = "block";
+    // Approximate by asking for the nearest large city name (more privacy)
+    const approxCity = prompt("Enter any city:");
+    if (approxCity) {
+      fetchWeatherByCity(approxCity.trim());
+    } else {
+      weatherInfo.textContent = "City name not provided.";
+    }
   }
+});
+
+function successPrecise(position) {
+  const { latitude, longitude } = position.coords;
+  fetchWeatherByCoords(latitude, longitude);
 }
 
-async function fetchWeatherByCoords(lat, lon) {
-  try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`);
-    if (!res.ok) throw new Error("Weather data not found");
-    const data = await res.json();
-    displayWeather(data);
-  } catch (err) {
-    showError(err.message);
-  }
+function geoError() {
+  weatherInfo.textContent = "Could not get your location.";
 }
 
-async function fetchWeatherByCity(city) {
-  try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`);
-    if (!res.ok) throw new Error("City not found or API issue");
-    const data = await res.json();
-    displayWeather(data);
-  } catch (err) {
-    showError(err.message);
-  }
+function fetchWeatherByCoords(lat, lon) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  getWeather(url);
 }
 
-function displayWeather(data) {
-  const icon = data.weather[0].icon;
-  weatherDiv.innerHTML = `
-    <h2>${data.name}</h2>
-    <p>${data.weather[0].description}</p>
-    <p>🌡️ ${data.main.temp} °C</p>
-    <img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="weather icon">
-  `;
+function fetchWeatherByCity(city) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  getWeather(url);
 }
 
-function showError(message) {
-  weatherDiv.innerHTML = "";
-  errorDiv.textContent = message;
+function getWeather(url) {
+  weatherInfo.textContent = "Fetching weather...";
+  fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error("Weather data not available");
+      return res.json();
+    })
+    .then((data) => {
+      const { name, main, weather } = data;
+      weatherInfo.innerHTML = `
+        <div><strong>${name}</strong></div>
+        <div>Temperature: ${main.temp}°C</div>
+        <div>Condition: ${weather[0].description}</div>
+        <div>Humidity: ${main.humidity}%</div>
+      `;
+    })
+    .catch(() => {
+      weatherInfo.textContent = "Failed to fetch weather data. Try again.";
+    });
 }
-
