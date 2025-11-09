@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #e8f4fd;
+  color: #333;
+  margin: 0;
+  padding: 2em;
+}
+
+h1 {
+  color: #0077b6;
+}
+
+.controls {
+  margin-bottom: 1em;
+}
+
+#weatherResult {
+  margin-top: 2em;
+  padding: 1em;
+  background: white;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  min-width: 220px;
+}
+
+.error {
+  color: red;
+  margin-top: 1em;
+}
+
