@@ -4,7 +4,7 @@ const fetchBtn = document.getElementById("fetch-weather");
 const locationOption = document.getElementById("location-option");
 
 fetchBtn.addEventListener("click", () => {
-  const choice = privacyOption.value;
+  const choice = locationOption.value;
 
   if (!choice) {
     weatherInfo.textContent = "Please select a location option first.";
