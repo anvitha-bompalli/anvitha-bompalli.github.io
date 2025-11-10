@@ -1,7 +1,7 @@
 const apiKey = "0137328857e384bec545718d4749db31";
 const weatherInfo = document.getElementById("weather-info");
 const fetchBtn = document.getElementById("fetch-weather");
-const privacyOption = document.getElementById("privacy-option");
+const privacyOption = document.getElementById("location-option");
 
 fetchBtn.addEventListener("click", () => {
   const choice = privacyOption.value;
