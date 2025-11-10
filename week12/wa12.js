@@ -25,6 +25,7 @@ fetchBtn.addEventListener("click", () => {
       weatherInfo.textContent = "Geolocation not supported by your browser.";
     }
   } else if (choice === "city") {
+    // Approximate by asking for the nearest large city name (more privacy)
     const approxCity = prompt("Enter any city:");
     if (approxCity) {
       fetchWeatherByCity(approxCity.trim());

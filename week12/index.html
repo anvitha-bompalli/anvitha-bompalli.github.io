@@ -4,19 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Dashboard</title>
-  <link rel="stylesheet" href="wa11.css">
+  <link rel="stylesheet" href="wa12.css">
 </head>
 <body>
 
   <div class="app">
     <header>Weather Dashboard</header>
 
+    <!-- Weather Display -->
     <section class="weather">
       <div id="weather-info" class="weather-info">Select how you want to get your weather data.</div>
     </section>
 
+    <!-- Controls -->
+    <label for="locationOption">Select location method:</label>
     <section class="controls">
-      <select id="privacy-option" class="dropdown">
+      <select id="location-option" class="dropdown">
         <option value="">-- Choose Location Option --</option>
         <option value="precise">Use Exact Location</option>
         <option value="manual">Enter City Manually</option>
@@ -27,6 +30,6 @@
     </section>
   </div>
 
-  <script src="wa11.js"></script>
+  <script src="wa12.js"></script>
 </body>
 </html>

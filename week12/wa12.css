@@ -6,6 +6,7 @@ html, body {
   background-color: #B8C6D9;
 }
 
+
 .app {
   position: relative;
   top: 50px;
@@ -24,6 +25,11 @@ header {
   background-color: #141F40;
   color: #B8C6D9;
   border-radius: 10px 10px 0 0;
+}
+
+label{
+  color:#B8C6D9;
+  padding: 30px;
 }
 
 .weather {
