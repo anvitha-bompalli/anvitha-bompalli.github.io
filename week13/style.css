@@ -1,0 +1,208 @@
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: #fafafa;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- DESKTOP: SIDEBAR (Default) --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #dbdbdb;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.sidebar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li a {
+  display: block;
+  padding: 15px 10px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+
+.sidebar li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* --- MOBILE: BOTTOM NAV (Hidden by default) --- */
+.mobile-nav {
+  display: none; /* Hidden on desktop */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-top: 1px solid #dbdbdb;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 100;
+}
+
+.mobile-nav a {
+  font-size: 1.5rem;
+  color: #262626;
+}
+
+/* --- MAIN FEED --- */
+.feed {
+  /* Account for the desktop sidebar width */
+  margin-left: 240px; 
+  max-width: 614px;
+  width: 100%;
+  padding-top: 20px;
+  margin-right: auto; /* Center feed if more space */
+  margin-left: 260px; /* Center feed */
+}
+
+/* STORIES */
+.stories {
+  display: flex;
+  padding: 16px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  width: 64px;
+  flex-shrink: 0; /* Prevent stories from shrinking */
+}
+
+.story img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid #c13584; /* Insta-style border */
+  padding: 2px;
+}
+
+.story span {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* POSTS */
+.post {
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+.post-header img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  /* This creates the "square" look */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.post-actions {
+  padding: 12px 16px;
+  font-size: 1.5rem;
+}
+
+.post-caption {
+  padding: 0 16px 16px;
+}
+
+/* --- WEATHER WIDGET --- */
+#weather-widget {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+#weather-widget h3 {
+  margin-top: 0;
+}
+
+/* --- MOBILE MEDIA QUERY (based on your sketch) --- */
+@media (max-width: 768px) {
+  /* Hide desktop sidebar */
+  .sidebar {
+    display: none;
+  }
+
+  /* Show mobile bottom nav */
+  .mobile-nav {
+    display: flex;
+  }
+
+  /* Make feed full-width */
+  .feed {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 0;
+  }
+  
+  /* Make stories/posts edge-to-edge on mobile */
+  .stories, .post {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .stories {
+    border-top: none; /* No top border for first item */
+    margin-bottom: 0;
+  }
+
+  .post {
+    margin-bottom: 10px;
+  }
+  
+  /* Add padding to the bottom so mobile nav doesn't cover content */
+  .post-container {
+    padding-bottom: 60px;
+  }
+}
