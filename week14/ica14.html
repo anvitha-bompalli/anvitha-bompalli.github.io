@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Button Assignment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column; 
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #E8D6D6; 
+      transition-duration: 2s;
+      font-family: sans-serif;
+    }
+
+    .btn-container {
+      position: relative;
+      width: 110px;
+      height: 60px;
+      background: #BFCBD9;
+      border: 4px solid #BFCBD9;
+      border-radius: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #ffffff;
+      top: 0px;
+      left: 0px;
+      border: none;
+      transform: translateX(0px);
+      transition-duration: 0.4s;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    #mysteryImage {
+      width: 300px;
+      height: auto;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 1s ease; 
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .moveRight {
+      transform: translateX(50px);
+      transition-duration: 0.4s;
+      background: #fff;
+    }
+
+    .altBackground {
+      background: #2E324D;
+      border: 4px solid #2E324D;
+    }
+
+    .bodyBackground {
+      background: #4A2513;
+      transition-duration: 2s;
+    }
+
+    .showImage {
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="btn-container">
+    <button type="button" class="btn" id="clickBtn"></button>
+  </div>
+
+  <img id="mysteryImage" src="images/cat.jpg" alt="Space view">
+  
+  <script>
+    const button = document.getElementById('clickBtn');
+    const container = document.querySelector('.btn-container');
+    const fullPage = document.querySelector('body');
+    const myImage = document.getElementById('mysteryImage');
+
+    function move() {
+      button.classList.toggle('moveRight');
+      container.classList.toggle('altBackground');
+      fullPage.classList.toggle('bodyBackground');
+      myImage.classList.toggle('showImage');
+    }
+
+    button.addEventListener('click', move);
+  </script>
+
+</body>
+</html
