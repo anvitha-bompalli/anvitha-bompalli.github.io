@@ -27,15 +27,32 @@
     </header>
 
     <main>
-        <section class="about-detailed" aria-label="Detailed information about me">
+        <!-- Intro + photo collage -->
+        <section class="about-intro" aria-label="About me">
+            <div class="about-intro-text">
+                <h2>About me!</h2>
+                <p>Hi there! I am an undergraduate student at CU Boulder, majoring in Information Science.
+                My academic journey focuses on the intersection of people, information, and systems.</p>
+            </div>
+
+            <div class="collage">
+                <img class="collage-item" src="images/aboutme_picture.png" alt="Photo of Anvitha Bompalli" width="400" height="500">
+                <img class="collage-item" src="images/aboutme_picture.png" alt="Photo of Anvitha Bompalli" width="400" height="500">
+                <img class="collage-item" src="images/aboutme_picture.png" alt="Photo of Anvitha Bompalli" width="400" height="500">
+                <img class="collage-item" src="images/aboutme_picture.png" alt="Photo of Anvitha Bompalli" width="400" height="500">
+            </div>
+        </section>
+
+        <!-- Interests + goals -->
+        <section class="about-detailed" aria-label="Interests and goals">
             <article class="about-section">
                 <h2>My Interests</h2>
                 <p>I am very interested in learning more about being a data scientist and a good designer. Here are some of my passions!</p>
                 <ul>
                     <li>Designing user-centric solutions</li>
-                    <li>Data exploration, analysis and Visualization</li>
+                    <li>Data exploration, analysis and visualization</li>
                     <li>Tackling complex problems</li>
-                    <li>Taking the most random pictures and Crocheting!</li>
+                    <li>Taking the most random pictures and crocheting!</li>
                 </ul>
             </article>
 
@@ -51,7 +68,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Anvitha Bompalli</p>
+        <p class="footer-connect">
+            Connect with me!
+            <a href="https://www.linkedin.com/in/anvitha-bompalli-a2a538335" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+        <p class="footer-copy">&copy; 2026 Anvitha Bompalli</p>
     </footer>
     <script src="script.js"></script>
 </body>

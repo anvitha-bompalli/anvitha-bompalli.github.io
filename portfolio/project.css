@@ -1,0 +1,241 @@
+/* ==========================================================
+   PROJECT DETAIL PAGES
+   Loaded after style.css on every individual project page
+   ========================================================== */
+
+.project-page {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    color: #2E324D;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #4A2513;
+}
+
+/* Title + summary */
+.project-header h2 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    color: #2E324D;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.project-summary {
+    font-size: 1.4rem;
+    color: #4A2513;
+    margin-bottom: 40px;
+}
+
+/* Quick facts strip */
+.project-facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #2E324D;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px #D9B3B0;
+    padding: 24px;
+    margin-bottom: 50px;
+}
+
+.fact h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #2E324D;
+    margin-bottom: 4px;
+}
+
+.fact p {
+    font-size: 1.1rem;
+    color: #4A2513;
+}
+
+/* Text sections */
+.project-block {
+    margin-bottom: 40px;
+}
+
+.project-block h3,
+.project-media h3 {
+    font-size: 1.8rem;
+    color: #2E324D;
+    margin-bottom: 12px;
+}
+
+.project-block p {
+    font-size: 1.25rem;
+}
+
+.process-list,
+.findings-list {
+    padding-left: 28px;
+    font-size: 1.25rem;
+    color: #4A2513;
+}
+
+.process-list li,
+.findings-list li {
+    margin-bottom: 10px;
+    padding-left: 6px;
+}
+
+.findings-list li::marker {
+    color: #2E324D;
+}
+
+.findings-list strong {
+    color: #2E324D;
+}
+
+/* ---------- Media (PDF / slides / video / images) ---------- */
+
+.project-media {
+    margin: 0 0 50px;
+}
+
+.media-frame {
+    border: 2px solid #2E324D;
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px #D9B3B0;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+/* tall frame for PDFs */
+.media-frame iframe {
+    display: block;
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    border: none;
+}
+
+/* Google Slides (16:9) */
+.media-frame.slides iframe {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+}
+
+/* videos */
+.media-frame video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* screenshots and images */
+.media-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* phone-shaped frame for mobile prototype videos */
+.media-frame.phone {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 28px;
+    border-width: 3px;
+    padding: 10px;
+    background-color: #2E324D;
+}
+
+.media-frame.phone video {
+    border-radius: 18px;
+}
+
+/* narrower frame for posters and other tall artwork */
+.media-frame.poster {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* buttons under media */
+.media-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.media-button {
+    font-size: 1.2rem;
+}
+
+/* Bottom navigation */
+.project-nav {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #D9B3B0;
+    padding-top: 24px;
+    margin-top: 20px;
+}
+
+.project-nav .back-link {
+    margin-bottom: 0;
+}
+
+/* ---------- Tablet ---------- */
+@media screen and (max-width: 768px) {
+    .project-page {
+        padding: 20px 10px;
+    }
+
+    .project-facts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-summary {
+        font-size: 1.2rem;
+    }
+
+    .media-frame iframe {
+        height: 70vh;
+        min-height: 400px;
+    }
+}
+
+/* ---------- Phone ---------- */
+@media screen and (max-width: 480px) {
+    .project-facts {
+        padding: 18px;
+        gap: 16px;
+    }
+
+    .project-block p,
+    .process-list,
+    .findings-list {
+        font-size: 1.1rem;
+    }
+
+    .media-actions {
+        flex-direction: column;
+    }
+
+    .media-button {
+        display: block;
+        text-align: center;
+    }
+
+    .media-frame.poster {
+        max-width: 100%;
+    }
+}

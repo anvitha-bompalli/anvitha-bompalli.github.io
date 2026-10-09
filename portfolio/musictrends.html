@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://use.typekit.net/uic2ymk.css">
+    <title>Music Trends - Anvitha Bompalli</title>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <h1 class="myname">Anvitha Bompalli</h1>
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html" aria-current="page">Projects</a>
+                <a href="resume.html">Resume</a>
+                <a href="connect.html">Connect</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+
+        <a href="dataprojects.html" class="back-link">&larr; Data projects</a>
+
+        <!-- 1. Title + summary -->
+        <section class="project-header">
+            <h2>Music Trends</h2>
+            <p class="project-summary">
+                How has musical success changed over 60 years? I analyzed historical music data and Spotify metrics to explore how artist popularity differs across record sales, Billboard charts, Grammy Awards, and streaming platforms.
+            </p>
+        </section>
+
+        <!-- 2. Quick facts -->
+        <section class="project-facts" aria-label="Project details">
+            <div class="fact">
+                <h3>Role</h3>
+                <p>Data Analyst | Independent Project</p>
+            </div>
+            <div class="fact">
+                <h3>Tools</h3>
+                <p>Python, Pandas, Seaborn, Matplotlib, Spotify API, Jupyter Notebook</p>
+            </div>
+            <div class="fact">
+                <h3>Data</h3>
+                <p>3 historical datasets covering music sales (1960–2019), Billboard chart performance, and Grammy Awards (1999–2019), supplemented with Spotify API data.</p>
+            </div>
+            <div class="fact">
+                <h3>Timeline</h3>
+                <p>Spring 2024</p>
+            </div>
+        </section>
+
+        <!-- 3. Overview -->
+        <section class="project-block">
+            <h3>The question</h3>
+            <p>
+                Music success can be measured in many ways, from record sales and chart rankings to industry awards and streaming popularity. 
+                I wanted to explore whether these different metrics reflect the same trends and how artist and genre popularity has shifted over time.
+            </p>
+        </section>
+
+        <section class="project-block">
+            <h3>What I did</h3>
+            <ol class="process-list">
+                <li>Data Collection & API Integration: Analyzed three historical music datasets and integrated Spotify API data to compare past achievements with more recent artist popularity metrics.</li>
+                <li>Data Cleaning & Processing: Used Python and Pandas to organize datasets, extract primary genres, group artist records, and aggregate chart performance and award counts.</li>
+                <li>[Compared success metrics (sales, charts, awards, streaming) across decades]</li>
+                <li>[Visualized the trends and wrote up the findings]</li>
+            </ol>
+        </section>
+
+        <!-- 4. Key findings -->
+        <section class="project-block">
+            <h3>Key findings</h3>
+            <ul class="findings-list">
+                <li>[Finding 1: one sentence, ideally with a number]</li>
+                <li>[Finding 2]</li>
+                <li>[Finding 3]</li>
+            </ul>
+        </section>
+
+        <!-- 5. Media -->
+        <section class="project-media" aria-label="Full project write-up">
+            <h3>Full write-up</h3>
+            <div class="media-frame">
+                <iframe src="files/music-trends-writeup.pdf" title="Music Trends project write-up (PDF)" loading="lazy"></iframe>
+            </div>
+            <a href="files/music-trends-writeup.pdf" class="hero-button media-button" target="_blank" rel="noopener noreferrer">
+                Open full PDF
+            </a>
+        </section>
+
+        <!-- 6. Bottom navigation -->
+        <nav class="project-nav" aria-label="Project navigation">
+            <a href="dataprojects.html" class="back-link">&larr; All data projects</a>
+        </nav>
+
+    </main>
+
+    <footer>
+        <p class="footer-connect">
+            Connect with me!
+            <a href="https://www.linkedin.com/in/anvitha-bompalli-a2a538335" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </p>
+        <p class="footer-copy">&copy; 2026 Anvitha Bompalli</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
