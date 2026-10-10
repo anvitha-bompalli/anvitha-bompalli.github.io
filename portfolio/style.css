@@ -386,6 +386,17 @@ nav a[aria-current="page"] {
     box-shadow: 4px 4px 0px #D9B3B0;
 }
 
+.resume-download {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.resume-download .hero-button {
+    text-align: center;
+    text-decoration: none;
+}
+
 /* ---------- Connect ---------- */
 
 .connect-section {
